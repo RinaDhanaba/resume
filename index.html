@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Rina S. Dhanaba · Performance Marketer & Web Developer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f6fa;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Text', Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      color: #1e2f3e;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    /* minimalist card with soft, neutral shadow */
+    .resume {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 1.75rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+      padding: 2.5rem 2.2rem;
+      transition: all 0.2s ease;
+    }
+
+    @media (max-width: 680px) {
+      body {
+        padding: 1rem;
+      }
+      .resume {
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+      }
+    }
+
+    /* header style - clean, no gradient, elegant font weight */
+    .header-modern {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eaeef4;
+    }
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 550;
+      letter-spacing: -0.01em;
+      color: #1e3a4d;
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', sans-serif;
+    }
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.2rem;
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      font-size: 0.85rem;
+      color: #5a748c;
+    }
+    .contact-info span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .role-pill {
+      background: #f0f3f8;
+      padding: 0.35rem 1.2rem;
+      border-radius: 2rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      color: #4a6f8e;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* section headers - refined, subtle */
+    h2 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #6b8aac;
+      margin: 1.8rem 0 0.9rem 0;
+      border-left: 3px solid #bdd4e8;
+      padding-left: 0.85rem;
+    }
+
+    /* summary card */
+    .summary-text {
+      background: #fbfdff;
+      border-radius: 1.2rem;
+      padding: 1rem 1.3rem;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: #2a4a6a;
+      border: 1px solid #eef2f9;
+      box-shadow: none;
+    }
+
+    /* skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.8rem;
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    .skill-card {
+      background: #ffffff;
+      border: 1px solid #eef2f9;
+      border-radius: 1rem;
+      padding: 0.75rem 1rem;
+      transition: all 0.1s ease;
+    }
+    .skill-card strong {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #6b8aac;
+      margin-bottom: 0.4rem;
+    }
+    .skill-card span {
+      font-size: 0.85rem;
+      color: #2a4a6a;
+      line-height: 1.45;
+    }
+
+    /* experience items */
+    .exp-item {
+      margin-bottom: 1.6rem;
+    }
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 0.2rem;
+    }
+    .exp-title {
+      font-weight: 650;
+      font-size: 1rem;
+      color: #1a4a6e;
+    }
+    .exp-date {
+      font-size: 0.7rem;
+      background: #f0f3f8;
+      padding: 0.2rem 0.8rem;
+      border-radius: 2rem;
+      color: #6b8aac;
+      font-weight: 500;
+    }
+    .exp-company {
+      font-weight: 500;
+      color: #7a9bbc;
+      font-size: 0.8rem;
+      margin: 0.2rem 0 0.5rem 0;
+    }
+    .desc-list {
+      list-style: none;
+      margin-top: 0.3rem;
+    }
+    .desc-list li {
+      font-size: 0.86rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+      color: #2c4a6a;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .desc-list li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #8aadcc;
+    }
+
+    /* projects section */
+    .projects-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .project-card {
+      background: #fafdff;
+      border: 1px solid #edf2f9;
+      border-radius: 1.2rem;
+      padding: 0.9rem 1.2rem;
+    }
+    .project-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.4rem;
+    }
+    .project-name {
+      font-weight: 650;
+      font-size: 0.94rem;
+      color: #2a6a8e;
+    }
+    .project-link {
+      font-size: 0.7rem;
+      color: #7a9bbc;
+      text-decoration: none;
+      border-bottom: 1px solid #dce5f0;
+    }
+    .project-link:hover {
+      color: #4a7a9c;
+    }
+
+    /* education + cert split */
+    .split-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin: 0.8rem 0 0.5rem;
+    }
+    .edu-block, .cert-block {
+      flex: 1;
+      background: #fbfdff;
+      border-radius: 1.2rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid #eef2f9;
+    }
+    .edu-block h3, .cert-block h3 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #6b8aac;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+    }
+    .cert-item {
+      font-size: 0.83rem;
+      margin-bottom: 0.5rem;
+      color: #3a6a8a;
+    }
+
+    /* tech focus chips */
+    .tech-focus {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 0.5rem 0 0.3rem;
+    }
+    .chip {
+      background: #eff2f8;
+      padding: 0.25rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.73rem;
+      font-weight: 500;
+      color: #5a7f9e;
+    }
+
+    /* declaration footer */
+    .declaration {
+      margin-top: 2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #eef2f8;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.72rem;
+      color: #7a98b8;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.68rem;
+      margin-top: 1.2rem;
+      color: #8aaac8;
+    }
+    a {
+      text-decoration: none;
+    }
+
+    @media (max-width: 550px) {
+      .exp-header {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+      .contact-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="resume">
+  <!-- refined header: no gradient, clean color, subtle font weight -->
+  <div class="header-modern">
+    <h1>RINA S. DHANABA</h1>
+    <div class="contact-bar">
+      <div class="contact-info">
+        <span>📍 Maharashtra, India</span>
+        <span>📞 (726) 293-9564</span>
+        <span>✉️ rinadhanaba@gmail.com</span>
+      </div>
+      <div class="role-pill">Performance Marketer · Technical SEO · Web Developer</div>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL SUMMARY (exact content) -->
+  <h2>PROFESSIONAL SUMMARY</h2>
+  <div class="summary-text">
+    Results-driven Performance Marketer and Website Developer specializing in Technical SEO, custom WordPress theme development, and frontend architecture. Proven ability to build robust CMS platforms, troubleshoot complex server issues, and optimize digital assets for maximum search engine visibility, rapid page speed, and seamless user experiences.
+  </div>
+
+  <!-- CORE COMPETENCIES & SKILLS (exact wording) -->
+  <h2>CORE COMPETENCIES & SKILLS</h2>
+  <div class="skills-grid">
+    <div class="skill-card"><strong>Website Development</strong><span>PHP, HTML5, CSS3, JavaScript, CodeIgniter, Angular framework</span></div>
+    <div class="skill-card"><strong>CMS & E-commerce</strong><span>WordPress (Custom Theme & Elementor Kit Development), WooCommerce, Shopify, BigCommerce, Squarespace, WIX</span></div>
+    <div class="skill-card"><strong>Performance Marketing</strong><span>Technical SEO, Page Speed Optimization, Core Web Vitals, On-Page SEO</span></div>
+    <div class="skill-card"><strong>Tools & Operations</strong><span>Git, Figma, VS Code, Server Handling, Malware/Code Injection Troubleshooting, Cross-browser testing</span></div>
+    <div class="skill-card"><strong>Methodologies & Soft Skills</strong><span>Agile/Scrum basics, Cross-functional collaboration, Client Communication, Problem-solving, Time Management</span></div>
+    <div class="skill-card"><strong>Languages</strong><span>Marathi, Hindi, English</span></div>
+  </div>
+
+  <!-- PROFESSIONAL EXPERIENCE (exact text) -->
+  <h2>PROFESSIONAL EXPERIENCE</h2>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <div class="exp-title">Website Developer & Performance Marketer</div>
+      <div class="exp-date">December 2024 – Present</div>
+    </div>
+    <div class="exp-company">WebDukes, Delhi (Remote)</div>
+    <ul class="desc-list">
+      <li>Develop highly optimized frontend architectures for CodeIgniter projects and build dynamic PHP landing pages.</li>
+      <li>Lead custom WordPress development, including advanced plugin modifications, custom theme development, and Elementor kit creation.</li>
+      <li>Manage server environments and perform complex troubleshooting to resolve critical backend and frontend errors.</li>
+      <li>Drive the content formatting and HTML structure for a women’s apparel and accessories e-commerce site to maximize user engagement and search engine crawlability.</li>
+    </ul>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <div class="exp-title">Website Developer (SEO)</div>
+      <div class="exp-date">April 2023 – December 2024</div>
+    </div>
+    <div class="exp-company">The Ocean Marketing, Virar</div>
+    <ul class="desc-list">
+      <li>Managed and optimized diverse e-commerce platforms, successfully handling large-scale WooCommerce, BigCommerce, and Shopify projects.</li>
+      <li>Executed deep-dive technical SEO and aggressive page speed optimization to dramatically improve organic rankings and site performance.</li>
+      <li>Adeptly crafted and redesigned websites optimized for both search engine visibility and user experience.</li>
+      <li>Resolved critical technical issues including complex form debugging, site downtime, SSL certificate errors, malware removal, and code injection fixes.</li>
+    </ul>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <div class="exp-title">Website Developer Intern</div>
+      <div class="exp-date">June 2022 – October 2022</div>
+    </div>
+    <div class="exp-company">NSMedia Solution, Vasai</div>
+    <ul class="desc-list">
+      <li>Developed and launched "brandingbeescorp.com", a fully functional WordPress website built directly from Figma designs.</li>
+      <li>Collaborated with senior developers to contribute to the development, troubleshooting, and maintenance of various client website projects.</li>
+    </ul>
+  </div>
+
+  <!-- INDEPENDENT PROJECTS (exact content) -->
+  <h2>INDEPENDENT PROJECTS</h2>
+  <div class="projects-container">
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-name">Lead Website Developer (Freelance)</span>
+        <span style="font-size:0.7rem; color:#7a9bbc;">March 2023 – May 2023</span>
+      </div>
+      <div style="font-weight:500; font-size:0.8rem; color:#7a9bbc; margin-bottom:0.3rem;">EDGE International, Gujarat</div>
+      <ul class="desc-list">
+        <li>Led a 2-month remote project focused on comprehensive on-page SEO optimization, site responsiveness, page creation, and full redesigns.</li>
+        <li>Collaborated directly with client stakeholders to ensure the timely delivery of high-quality, client-aligned digital solutions.</li>
+      </ul>
+    </div>
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-name">Personal Portfolio Website</span>
+        <a href="https://rinadhanaba.github.io/rina-potfolio/about" target="_blank" class="project-link">rinadhanaba.github.io/rina-potfolio/ →</a>
+      </div>
+      <div style="font-weight:500; font-size:0.8rem; color:#7a9bbc; margin-bottom:0.3rem;">Angular Framework Project</div>
+      <ul class="desc-list">
+        <li>Designed and developed a personal portfolio site utilizing the Angular framework to showcase frontend development capabilities, clean code practices, and personal projects.</li>
+      </ul>
+    </div>
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-name">NSMedia Solution, Vasai - Website Developer Intern</span>
+        <span style="font-size:0.7rem; color:#7a9bbc;">Jun 2022 – Oct 2022</span>
+      </div>
+      <ul class="desc-list">
+        <li>Built brandingbeescorp.com – fully custom WordPress site from Figma designs, pixel-perfect implementation.</li>
+        <li>Collaborated with senior devs on troubleshooting and maintenance of multiple client website projects.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EDUCATION (exact) -->
+  <h2>EDUCATION</h2>
+  <div class="split-layout">
+    <div class="edu-block">
+      <h3>Bachelor of Science in Computer Science (CS)</h3>
+      <div style="font-size:0.85rem;">Gogate College, Ratnagiri (University of Mumbai)</div>
+      <div style="font-size:0.78rem; color:#7a98b8; margin-top:0.3rem;">March 2019 – March 2022</div>
+    </div>
+    <div class="cert-block">
+      <h3>CERTIFICATIONS</h3>
+      <div class="cert-item">Digital Marketing Course (3 Months) – Coursera, 2026</div>
+      <div class="cert-item">.NET Website Development (5 Months) – Ratnagiri, 2020 – 2021</div>
+      <div class="cert-item">Website Development in Bootstrap (3 Months) – Ratnagiri, 2019</div>
+    </div>
+  </div>
+
+  <!-- Technical focus chips (neutral) -->
+  <h2>TECHNICAL FOCUS</h2>
+  <div class="tech-focus">
+    <span class="chip">WordPress theme dev</span>
+    <span class="chip">Elementor kit dev</span>
+    <span class="chip">PHP / CodeIgniter</span>
+    <span class="chip">Angular framework</span>
+    <span class="chip">Technical SEO / PageSpeed</span>
+    <span class="chip">Malware & SSL debugging</span>
+    <span class="chip">WooCommerce / BigCommerce / Shopify</span>
+    <span class="chip">Server handling</span>
+  </div>
+
+  <!-- DECLARATION (exact wording) -->
+  <div class="declaration">
+    <span>I hereby declare that the information furnished above is true, complete, and correct to the best of my knowledge and belief.</span>
+    <span>Date: _______________ &nbsp; | &nbsp; Place: Maharashtra, India</span>
+  </div>
+  <footer>Rina S. Dhanaba · Performance Marketer & Website Developer</footer>
+</div>
+</body>
+</html>
